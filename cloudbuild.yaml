@@ -10,15 +10,15 @@ steps:
 
   - id: go_test
     name: "gcr.io/cloud-builders/go"
-    args: ["test","soma"]
-    env: ["GOPATH=."]
+    args: ["test"]
+    env: ["GOPATH=./src"]
 
   - id: go_security
     name: "securego/gosec"
     args: ["soma"]
-    env: ["GOPATH=."]
+    env: ["GOPATH=./scr"]
 
   - id: your_step_here
     name: "gcr.io/cloud-builders/go"
     args: ["run","soma"]
-    env: ["GOPATH=."]
+    env: ["GOPATH=./src"]
