@@ -1,4 +1,8 @@
 steps:
+  - id: "Push imagem"
+    name: 'grc.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/desafio-ci', '.']
+  
   - id: go_version
     name: "gcr.io/cloud-builders/go"
     args: ["version"]
