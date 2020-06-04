@@ -1,18 +1,20 @@
 steps:
     - id: "Push imagem"
       name: "gcr.io/cloud-builders/docker"
-      args: ['build', '-t', 'gcr.io/$PROJECT_ID/desafio-ci', '.']
+      args: ['build', '-t', 'gcr.io/$PROJECT_ID/desafio-ci:latest', '.']
 
     - id: go_test
       name: "gcr.io/cloud-builders/go"
-      env: ["GOPATH=go"]
-      args: ['test', '-v']
+      env: ["GOPATH=."]
+      args: ['test', 'soma']
 
     - id: your_step_here
       name: "gcr.io/cloud-builders/go"
       args: ["run","soma"]
-      env: ["GOPATH=go"]
+      env: ["GOPATH=."]
 
 images:
-    - 'gcr.io/$PROJECT_ID/desafio-ci'
+    - 'gcr.io/$PROJECT_ID/desafio-ci:latest'
+
+tags: ['cloud-builders-community']
 
