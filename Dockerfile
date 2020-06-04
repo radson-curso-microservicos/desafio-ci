@@ -1,7 +1,7 @@
 FROM golang as builder
 COPY /src .
 
-RUN GOOS=linux go build -ldflags="-s -w" -v -x -o ./soma .
+RUN GOOS=linux go build -ldflags="-s -w"  -o ./soma .
 RUN ls
 
 FROM hello-world
