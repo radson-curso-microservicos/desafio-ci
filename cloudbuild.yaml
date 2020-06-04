@@ -15,7 +15,7 @@ steps:
     - id: go_test
       name: "gcr.io/cloud-builders/go"
       env: ["GOPATH=."]
-      args: ['test', '-v', 'soma']
+      args: ['test', '-v']
 
     #- id: your_step_here
     #name: "gcr.io/cloud-builders/go"
