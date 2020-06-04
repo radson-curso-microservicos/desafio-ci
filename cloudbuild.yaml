@@ -5,11 +5,11 @@ steps:
 
     - name: 'gcr.io/cloud-builders/go'
       args: ['install', '.']
-      env: ['PROJECT_ROOT=soma']
+      env: ['PROJECT_ROOT=.']
     
     - name: 'gcr.io/cloud-builders/go'
       args: ['test', 'soma']
-      env: ['PROJECT_ROOT=soma']
+      env: ['PROJECT_ROOT=.']
 
 
     #  - id: go_version
