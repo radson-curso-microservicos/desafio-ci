@@ -1,6 +1,5 @@
 FROM golang as builder
-COPY /src/soma.go .
-COPY /src/soma_test.go .
+COPY /src .
 
 RUN GOOS=linux go build -ldflags="-s -w" soma.go
 RUN ls
