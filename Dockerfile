@@ -6,6 +6,6 @@ RUN ls
 
 FROM hello-world
 COPY --from=builder /go/soma .
-COPY /src .
+COPY /src/soma /soma
 
 ENTRYPOINT ["/soma"]
